@@ -1,28 +1,28 @@
-humanparser
-=========
+# humanparser
 
-[![NPM](https://nodei.co/npm/humanparser.png)](https://nodei.co/npm/humanparser/)
-
-[![Build Status](https://travis-ci.org/chovy/humanparser.svg?branch=master)](https://travis-ci.org/chovy/humanparser) [![Requirements Status](https://requires.io/github/chovy/humanparser/requirements.png?branch=master)](https://requires.io/github/chovy/humanparser/requirements/?branch=master)
+[![Build Status](https://travis-ci.org/compwright/humanparser.svg?branch=master)](https://travis-ci.org/compwright/humanparser)
 
 Parse a human name string into salutation, first name, middle name, last name, suffix.
 
-## Install
+## Installation
 
-    npm install humanparser
+```bash
+$ npm install @compwright/humanparser --save
+```
 
 ## Usage
 
-    const human = require('humanparser');
-    
-### parse human name    
+### Parse human name    
 
-    const fullName = 'Mr. William R. Hearst, III';
-	const attrs = human.parseName(fullName);
+```javascript
+const human = require('@compwright/humanparser');
+const fullName = 'Mr. William R. Hearst, III';
+const attrs = human.parseName(fullName);
 
-    console.log(attrs);
+console.log(attrs);
+```
 
-    //produces the following output
+Produces the following output:
     
     { 
         saluation: 'Mr.',
@@ -33,22 +33,30 @@ Parse a human name string into salutation, first name, middle name, last name, s
         fullName: 'Mr. William R. Hearst, III'
     }
       
-### get fullest name in string
+### Get fullest name in string
 
-    const name = 'John & Peggy Sue';
-    const fullName = human.getFullestName(name);
+```javascript
+const human = require('@compwright/humanparser');
+const name = 'John & Peggy Sue';
+const fullName = human.getFullestName(name);
+```
 
-    //produces the following output
+Produces the following output:
+
     {
         fullName: 'Peggy Sue'
     }
       
-### parse address
+### Parse address
 
-    const address = '123 Happy Street, Honolulu, HI  65780';
-    const parsed = human.parseAddress(address);
-    
-    //produces the following output    
+```javascript
+const human = require('@compwright/humanparser');
+const address = '123 Happy Street, Honolulu, HI  65780';
+const parsed = human.parseAddress(address);
+```
+
+Produces the following output:
+
     {
         address: '123 Happy Street',
         city: 'Honolulu',
@@ -57,3 +65,6 @@ Parse a human name string into salutation, first name, middle name, last name, s
         fullAddress: '123 Happy Street, Honolulu, HI  65780'
     }
 
+## License
+
+MIT License
